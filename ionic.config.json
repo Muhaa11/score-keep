@@ -1,0 +1,8 @@
+{
+  "name": "Score Keep",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "8003a06a"
+}

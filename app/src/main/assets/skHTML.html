@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreKeep</title>
+    <link href="skCSS.css" type="text/css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="field">
+
+    <div class="tools">
+        <button onClick="undo_last()" type="button" class="button">Undo</button>
+        <button onClick="clear_canvas()" type="button" class="button">Clear</button>
+
+        <div onclick="change_color(this)" class="color-field" style="background: white;"></div>
+        <div onclick="change_color(this)" class="color-field" style="background: black;"></div>
+        <div onclick="change_color(this)" class="color-field" style="background: #3da978;"></div>
+
+        <input onInput="draw_color = this.value" type="color" class="color-picker">
+        <input type="range" min="1" max="23" class="pen-range"
+               onInput="draw_width = this.value">
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+</div>
+
+</body>
+
+<form name="calc_form" class="calc_class">
+
+
+    <input type="text" name="answer" class="dd">
+
+
+    <br>
+    <input type="button" class="OPbutt" value="C" onclick="calc_form.answer.value = ''">
+    <input type="button" class="butt" value="00" onclick="calc_form.answer.value += '00'">
+    <input type="button" class="RMbutt" value="<" onclick="calc_form.answer.value = calc_form.answer.value.substring(0,calc_form.answer.value.length*1-1)">
+    <input type="button" class="OPbutt" value="/" onclick="calc_form.answer.value += '/'">
+
+
+    <br>
+
+    <input type="button" class="butt" value="7" onclick="calc_form.answer.value += '7'">
+    <input type="button" class="butt" value="8" onclick="calc_form.answer.value += '8'">
+    <input type="button" class="butt" value="9" onclick="calc_form.answer.value += '9'">
+    <input type="button" class="OPbutt" value="*" onclick="calc_form.answer.value += '*'">
+
+
+
+    <br>
+
+
+    <input type="button" class="butt" value="4" onclick="calc_form.answer.value += '4'">
+    <input type="button" class="butt" value="5" onclick="calc_form.answer.value += '5'">
+    <input type="button" class="butt" value="6" onclick="calc_form.answer.value += '6'">
+    <input type="button" class="OPbutt" value="-" onclick="calc_form.answer.value += '-'">
+
+
+
+    <br>
+
+
+    <input type="button" class="butt" value="1" onclick="calc_form.answer.value += '1'">
+    <input type="button" class="butt" value="2" onclick="calc_form.answer.value += '2'">
+    <input type="button" class="butt" value="3" onclick="calc_form.answer.value += '3'">
+    <input type="button" class="OPbutt" value="+" onclick="calc_form.answer.value += '+'">
+
+
+    <br>
+
+
+
+    <input type="button" id="zero" value="0" onclick="calc_form.answer.value += '0'">
+    <input type="button" class="butt" value="." onclick="calc_form.answer.value += '.'">
+    <input type="button" class="OPbutt" value="=" onclick="calc_form.answer.value = eval(calc_form.answer.value)">
+
+
+
+
+</form>
+<div id="footer">
+    <p>Mahmood Aljeboory</p>
+</div>
+<div id="tm">
+    <p>Muha</p>
+</div>
+
+<script src="skJS.js"></script>
+</html>
